@@ -224,6 +224,14 @@ class Ui_FrmMain(object):
         font.setWeight(50)
         self.radioButton_30.setFont(font)
         self.radioButton_30.setObjectName("radioButton_30")
+        self.WRecG1 = QtWebEngineWidgets.QWebEngineView(self.tabRecord)
+        self.WRecG1.setGeometry(QtCore.QRect(100, 30, 321, 251))
+        self.WRecG1.setProperty("url", QtCore.QUrl("about:blank"))
+        self.WRecG1.setObjectName("WRecG1")
+        self.scatteringWidget_2 = QtWebEngineWidgets.QWebEngineView(self.tabRecord)
+        self.scatteringWidget_2.setGeometry(QtCore.QRect(450, 30, 321, 251))
+        self.scatteringWidget_2.setProperty("url", QtCore.QUrl("about:blank"))
+        self.scatteringWidget_2.setObjectName("scatteringWidget_2")
         self.tabWidget.addTab(self.tabRecord, "")
         self.tabReplay = QtWidgets.QWidget()
         self.tabReplay.setObjectName("tabReplay")
@@ -396,6 +404,14 @@ class Ui_FrmMain(object):
         self.btnPause.setStyleSheet("border-image: url(:/botones/Botonpausa.jpg);")
         self.btnPause.setText("")
         self.btnPause.setObjectName("btnPause")
+        self.WRepG1 = QtWebEngineWidgets.QWebEngineView(self.tabReplay)
+        self.WRepG1.setGeometry(QtCore.QRect(100, 30, 321, 251))
+        self.WRepG1.setProperty("url", QtCore.QUrl("about:blank"))
+        self.WRepG1.setObjectName("WRepG1")
+        self.WRepG2 = QtWebEngineWidgets.QWebEngineView(self.tabReplay)
+        self.WRepG2.setGeometry(QtCore.QRect(450, 30, 321, 251))
+        self.WRepG2.setProperty("url", QtCore.QUrl("about:blank"))
+        self.WRepG2.setObjectName("WRepG2")
         self.tabWidget.addTab(self.tabReplay, "")
 
         self.retranslateUi(FrmMain)
@@ -435,6 +451,7 @@ class Ui_FrmMain(object):
         self.rBtnPSPRep1.setText(_translate("FrmMain", "PSP"))
         self.radioButton_18.setText(_translate("FrmMain", "Grafica 6"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabReplay), _translate("FrmMain", "Replay"))
+from PyQt5 import QtWebEngineWidgets
 from VISTA.UI.Images import source
 
 

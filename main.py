@@ -1,9 +1,14 @@
+from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import *
 from VISTA.UI.ui_main import Ui_FrmMain
 from VISTA.vSettings import Vsettings
 from VISTA.vOpenFile import VopenFile
-
+import pandas as pd
+import folium # pip install folium
+import matplotlib.pyplot as plt
+from PyQt5.QtWebEngineWidgets import QWebEngineView # pip install PyQtWebEngine
 import sys
+import io
 
 class Principal(QDialog):
 
@@ -24,16 +29,16 @@ class Principal(QDialog):
         #Botones Generales Record
         self.ui.btnSettings.clicked.connect(self.Vsetting.mostrar)
         self.ui.btnRec.clicked.connect(self.alertar)
-        self.ui.pushButton_4.clicked.connect(self.alertar)
+        self.ui.pushButton_4.clicked.connect(self.saveFile)
 
         #Botones Generales Replay
         self.ui.btnPlay.clicked.connect(self.alertar)
         self.ui.btnPause.clicked.connect(self.alertar)
-        self.ui.btnOpenFile.clicked.connect(self.alertar)
+        self.ui.btnOpenFile.clicked.connect(self.getCSV)
 
         #Botones REC Grafica 1
 
-        self.ui.rBtnMapRec1.clicked.connect(self.alertar)
+        self.ui.rBtnMapRec1.clicked.connect(self.viewMap)
         self.ui.rBtn3DRec1.clicked.connect(self.alertar)
         self.ui.rBtnPDPRec1.clicked.connect(self.alertar)
         self.ui.rBtnPSPRec1.clicked.connect(self.alertar) 
@@ -62,7 +67,7 @@ class Principal(QDialog):
 
         self.ui.rBtnMapRep2.clicked.connect(self.alertar)
         self.ui.rBtn3DRep2.clicked.connect(self.alertar)
-        self.ui.rBtnPDPRep2.clicked.connect(self.alertar)
+        self.ui.rBtnPDPRep2.clicked.connect(self.plot)
         self.ui.rBtnPSPRep2.clicked.connect(self.alertar)  
         self.ui.radioButton_10.clicked.connect(self.alertar)
         self.ui.radioButton_7.clicked.connect(self.alertar)
@@ -73,6 +78,39 @@ class Principal(QDialog):
         self.mensaje.setIcon(QMessageBox.Warning)
         self.mensaje.setText('Elemento en construccion')
         self.mensaje.exec_()
+
+    def getCSV(self):
+        filePath, _ = QFileDialog.getOpenFileName(self, 'Open file', '')
+        if filePath != "":
+            print ("Dirección",filePath) 
+            self.df = pd.read_csv(str(filePath))
+
+    def plot(self):
+        self.df.plot()
+        print(self.df)
+        plt.show()
+        
+    def saveFile(self):
+        options = QFileDialog.Options()
+        options |= QFileDialog.DontUseNativeDialog
+        fileName, _ = QFileDialog.getSaveFileName(self,"QFileDialog.getSaveFileName()","","All Files (*);;Text Files (*.txt)", options=options)
+        if fileName:
+            print(fileName)
+    
+    def viewMap(self):
+        coordinate = (20.628269,-103.284029)
+        m = folium.Map(
+        	tiles='Stamen Terrain',
+        	zoom_start=20,
+        	location=coordinate
+        )
+
+        # save map data to data object
+        data = io.BytesIO()
+        m.save(data, close_file=False)
+        
+        self.ui.WRecG1.setHtml(data.getvalue().decode())
+        #self.addWidget(webView)
 
 def main():
     app = QApplication(sys.argv)

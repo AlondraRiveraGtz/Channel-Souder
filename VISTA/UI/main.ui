@@ -521,6 +521,36 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;
       </property>
      </widget>
     </widget>
+    <widget class="QWebView" name="WRecG1" native="true">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>30</y>
+       <width>321</width>
+       <height>251</height>
+      </rect>
+     </property>
+     <property name="url" stdset="0">
+      <url>
+       <string>about:blank</string>
+      </url>
+     </property>
+    </widget>
+    <widget class="QWebView" name="scatteringWidget_2" native="true">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>30</y>
+       <width>321</width>
+       <height>251</height>
+      </rect>
+     </property>
+     <property name="url" stdset="0">
+      <url>
+       <string>about:blank</string>
+      </url>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="tabReplay">
     <attribute name="title">
@@ -913,9 +943,46 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;
       <string/>
      </property>
     </widget>
+    <widget class="QWebView" name="WRepG1" native="true">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>30</y>
+       <width>321</width>
+       <height>251</height>
+      </rect>
+     </property>
+     <property name="url" stdset="0">
+      <url>
+       <string>about:blank</string>
+      </url>
+     </property>
+    </widget>
+    <widget class="QWebView" name="WRepG2" native="true">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>30</y>
+       <width>321</width>
+       <height>251</height>
+      </rect>
+     </property>
+     <property name="url" stdset="0">
+      <url>
+       <string>about:blank</string>
+      </url>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QWebView</class>
+   <extends>QWidget</extends>
+   <header>QtWebKit/QWebView</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="Images/source.qrc"/>
  </resources>
