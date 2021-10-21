@@ -47,7 +47,7 @@ class Principal(QDialog):
 
         #Botones REC Grafica 2
 
-        self.ui.rBtnMapRec2.clicked.connect(self.alertar)
+        self.ui.rBtnMapRec2.clicked.connect(self.viewMap)
         self.ui.rBtn3DRec2.clicked.connect(self.alertar)
         self.ui.rBtnPDPRec2.clicked.connect(self.alertar)
         self.ui.radioButton_29.clicked.connect(self.alertar) 
@@ -56,7 +56,7 @@ class Principal(QDialog):
 
         #Botones Replay Grafica 1
 
-        self.ui.rBtnMapRep1.clicked.connect(self.alertar) 
+        self.ui.rBtnMapRep1.clicked.connect(self.viewMap) 
         self.ui.rBtn3DRep1.clicked.connect(self.alertar)
         self.ui.rBtnPDPRep1.clicked.connect(self.alertar)
         self.ui.rBtnPSPRep1.clicked.connect(self.alertar)  
@@ -65,7 +65,7 @@ class Principal(QDialog):
 
         #Botones Replay Grafica 2
 
-        self.ui.rBtnMapRep2.clicked.connect(self.alertar)
+        self.ui.rBtnMapRep2.clicked.connect(self.viewMap)
         self.ui.rBtn3DRep2.clicked.connect(self.alertar)
         self.ui.rBtnPDPRep2.clicked.connect(self.plot)
         self.ui.rBtnPSPRep2.clicked.connect(self.alertar)  
@@ -101,15 +101,23 @@ class Principal(QDialog):
         coordinate = (20.628269,-103.284029)
         m = folium.Map(
         	tiles='Stamen Terrain',
-        	zoom_start=20,
+        	zoom_start=15,
         	location=coordinate
         )
 
         # save map data to data object
         data = io.BytesIO()
         m.save(data, close_file=False)
+        #switch(self.ui.)
         
-        self.ui.WRecG1.setHtml(data.getvalue().decode())
+        if self.ui.rBtnMapRec1.isChecked():
+            self.ui.WRecG1.setHtml(data.getvalue().decode())
+        if self.ui.rBtnMapRec2.isChecked():
+            self.ui.WRecG2.setHtml(data.getvalue().decode())
+        if self.ui.rBtnMapRep1.isChecked():
+            self.ui.WRepG1.setHtml(data.getvalue().decode())
+        if self.ui.rBtnMapRep2.isChecked():
+            self.ui.WRepG2.setHtml(data.getvalue().decode())
         #self.addWidget(webView)
 
 def main():

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>850</width>
+    <width>1024</width>
     <height>541</height>
    </rect>
   </property>
@@ -22,7 +22,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>801</width>
+     <width>1000</width>
      <height>511</height>
     </rect>
    </property>
@@ -210,7 +210,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;
     <widget class="QGroupBox" name="groupRecGrafica1">
      <property name="geometry">
       <rect>
-       <x>90</x>
+       <x>140</x>
        <y>290</y>
        <width>341</width>
        <height>121</height>
@@ -367,7 +367,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;
     <widget class="QGroupBox" name="rBtnPSPRec2">
      <property name="geometry">
       <rect>
-       <x>440</x>
+       <x>580</x>
        <y>290</y>
        <width>341</width>
        <height>121</height>
@@ -526,7 +526,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;
       <rect>
        <x>100</x>
        <y>30</y>
-       <width>321</width>
+       <width>421</width>
        <height>251</height>
       </rect>
      </property>
@@ -536,12 +536,12 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;
       </url>
      </property>
     </widget>
-    <widget class="QWebView" name="scatteringWidget_2" native="true">
+    <widget class="QWebView" name="WRecG2" native="true">
      <property name="geometry">
       <rect>
-       <x>450</x>
+       <x>540</x>
        <y>30</y>
-       <width>321</width>
+       <width>421</width>
        <height>251</height>
       </rect>
      </property>
@@ -559,7 +559,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;
     <widget class="QGroupBox" name="groupRepGrafica2">
      <property name="geometry">
       <rect>
-       <x>440</x>
+       <x>580</x>
        <y>290</y>
        <width>341</width>
        <height>121</height>
@@ -716,7 +716,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;
     <widget class="QGroupBox" name="groupRepGrafica1">
      <property name="geometry">
       <rect>
-       <x>90</x>
+       <x>140</x>
        <y>290</y>
        <width>341</width>
        <height>121</height>
@@ -948,7 +948,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;
       <rect>
        <x>100</x>
        <y>30</y>
-       <width>321</width>
+       <width>421</width>
        <height>251</height>
       </rect>
      </property>
@@ -961,9 +961,9 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;
     <widget class="QWebView" name="WRepG2" native="true">
      <property name="geometry">
       <rect>
-       <x>450</x>
+       <x>540</x>
        <y>30</y>
-       <width>321</width>
+       <width>421</width>
        <height>251</height>
       </rect>
      </property>
